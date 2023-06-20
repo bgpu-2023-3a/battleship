@@ -53,6 +53,9 @@
         <button @click="handleRandomPlacement">Случайно</button>
         <button @click="resetBoard()">Сбросить</button>
         <button @click="onClickStartBtn"  :class="{ disable: totalShips !== 0 }">Начать</button>
+         <button @click="handleRandomPlacement">Случайно</button>
+        <button @click="resetBoard()">Сбросить</button>
+        <button @click="onClickStartBtn"  :class="{ disable: totalShips !== 0 }">Начать</button>
       </div>
     </div>
   </v-dialog>
