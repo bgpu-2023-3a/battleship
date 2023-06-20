@@ -138,6 +138,26 @@ export default {
     },
 
     makePlTurn(pcCordAttack) {
+      watch: {
+    // для изменения статусов сообщения и цвета
+    gameStatus () {
+        if (this.gameStatus === 'win') {
+            this.gameStatusColor = 'statusWin'
+
+            this.gameStatusMessage = `${this.activePlayer} Wins !`
+
+            return
+        } else if (this.gameStatus === 'draw') {
+            this.gameStatusColor = 'statusDraw'
+
+            this.gameStatusMessage = 'Draw !'
+
+            return
+        }
+
+        this.gameStatusMessage = `${this.activePlayer}'s turn`
+    }
+}
       const { x, y } = JSON.parse(pcCordAttack);
       const attackInfo = this.pl.attack({ player: this.pc, x, y });
       this.$refs.game.updatePcBoard(pcCordAttack, attackInfo);
