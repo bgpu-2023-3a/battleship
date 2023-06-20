@@ -5,5 +5,5 @@
 
 Над проектом работают: Семендеев Алексей, Шароян Рафаэл, Пяткова Вероника, Шевченко Александр
 <div id="header" align="center">
-  <img src="https://ja-rastu.ru/uploads/posts/2016-06/1466507354_p5.jpg" width="50"/>
+  <img src="https://ja-rastu.ru/uploads/posts/2016-06/1466507354_p5.jpg" width="200"/>
 </div>
