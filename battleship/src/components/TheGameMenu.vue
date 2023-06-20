@@ -13,6 +13,85 @@
       </button>    
     </div>
   </v-dialog>
+
+  <button id="replay__btn" type="button" name="button">Play the game</button>
+
+$(document).ready(function() {
+    let app = {
+        cards: ['&spades;', '&spades;', '&clubs;', '&clubs;', '&hearts;', '&hearts;', '&diams;', '&diams;', '&sung;', '&sung;', '&starf;', '&starf;'],
+
+        init: function() {
+            app.shuffle();
+        }, //end jf init func
+
+        shuffle: function() {
+            let random = 0;
+            let temp = 0;
+            for (let i = 1; i < app.cards.length; i++) {
+                random = Math.round(Math.random() * i);
+                temp = app.cards[i];
+                app.cards[i] = app.cards[random];
+                app.cards[random] = temp;
+            }
+            console.log(app.cards);
+            app.assignCards();
+            console.log(`Shuffle arr ${app.cards}`);
+
+        }, //end jf shuffle func
+
+        assignCards: function() {
+            $('.card').each(function(index) {
+                $(this).data('cardValue', app.cards[index]).html('').addClass('unmatched').removeClass('selected').css({opacity: 1});
+            });
+            app.clickHandlers();
+        }, //end jf assignCards func
+
+        clickHandlers: function() {
+            $('.card').on('click', function() {
+                $(this).html('<p>' + $(this).data('cardValue') + '</p>').addClass('selected');
+                app.checkMatch();
+            });
+        }, //end jf clickHandlers func
+
+        checkMatch: function() {
+            if ($('.selected').length === 2) {
+                if ($('.selected').first().data('cardValue') == $('.selected').last().data('cardValue')) {
+                    $('.selected').each(function() {
+                        $(this).animate({
+                            opacity: 0
+                        }).removeClass('unmatched');
+                    });
+                    $('.selected').each(function() {
+                        $(this).removeClass('selected');
+                    });
+                    app.win();
+                } else {
+                    setTimeout(function() {
+                        // alert("jjj")
+                        $('.selected').each(function() {
+                            $(this).html('').removeClass('selected');
+                        });
+                    }, 2000);
+                }
+            }
+        }, //end chek funk
+        win: function() {
+            if ($('.unmatched').length === 0) {
+                $('#modal').modal();
+            }
+        }
+    };
+
+    console.log(app);
+    app.init();
+
+    function startPlay() {
+        app.init();
+    }
+    
+    $('#replay__btn').click(startPlay);
+
+});
 </template>
 
 <script>

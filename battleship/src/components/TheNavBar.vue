@@ -46,7 +46,11 @@ nav button {
 
 nav button:hover,
 nav button:focus {
+
   box-shadow: 0 0px 5px 1px rgb(29, 25, 30);
+=======
+  box-shadow: 0 0px 5px 1px rgb(29, 25, 30);
+
   animation: pulse 1s infinite alternate;
 }
 
@@ -61,7 +65,11 @@ nav button:focus {
 
 @keyframes pulse {
   100% {
+
     box-shadow: 0 0px 5px 1px rgb(0, 255, 210);
+=======
+    box-shadow: 0 0px 5px 1px rgb(0, 255, 210);
+
   }
 }
 
