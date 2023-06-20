@@ -31,4 +31,13 @@ const createShip = ({ length }) => {
   };
 };
 
+const castLongHit = (length) => {
+  
+  for (let i = 0; i < 3; i++) {
+  length+=Math.pow(length,i);
+}
+
+  return length;
+};
+
 export default createShip;
