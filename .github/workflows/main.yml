@@ -1,33 +1,21 @@
-# название
-name: Project test & build
-
-# целевые события для запуска
-# в данном случае это push и pull_request, в ветку master
+name: deploy
 on:
-  push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
-
-# выполняемые действия
+    types: [closed]
 jobs:
-  build-and-deploy:
+  do-deploy:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    
-    # запускаются по шагам
-    # name - название шага
-    # в github actions будет выводиться название шага, и процессы
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
-        with:
-          persist-credentials: false
-
-      - name: Install 🔧
-        run: npm install
-
-      - name: Run Test 🔨
-        run: npm run test
-
-      - name: Build 👷
-        run: npm run build
+      - run: echo "PULL REQUEST APPROVED"
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
