@@ -315,7 +315,7 @@ export default {
   font-family: bfont;
   min-width: 100%;
   background-color: rgba(34, 34, 34, 0.8);
-  box-shadow: inset 0 0 2px 2px rgb(56, 56, 56);
+  box-shadow: inset 0 0 2px 2px rgb(56, 56, 54);
 }
 
 .container h2 {
@@ -383,14 +383,14 @@ export default {
   display: grid;
   grid-template-columns: repeat(10, var(--spot-size));
   grid-gap: 4px;
-  border: 4px solid rgb(0, 44, 102);
-  background-color: rgb(0, 44, 102);
+  border: 4px solid rgb(0, 44, 105);
+  background-color: rgb(0, 44, 105);
 }
 
 .spot {
   width: var(--spot-size);
   height: var(--spot-size);
-  background-color: rgb(35, 137, 218);
+  background-color: rgb(35, 137, 220);
   position: relative;
 }
 
@@ -415,7 +415,7 @@ export default {
 
 .tip-ico {
   font-size: 3.6rem;
-  color: rgb(255, 255, 0);
+  color: rgb(255, 255, 45);
   animation: pulse 250ms 3s 6 alternate;
   border-radius: 50%;
 }
@@ -424,7 +424,7 @@ export default {
   100% {
     transform: scale(1.2);
     color: rgb(200, 48, 48);
-    box-shadow: inset 0 0 10px 2px rgb(255, 255, 0),
+    box-shadow: inset 0 0 10px 2px rgb(255, 255, 45),
       0 0 10px 2px rgb(255, 255, 0);
   }
 }
