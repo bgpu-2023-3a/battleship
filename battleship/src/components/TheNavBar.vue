@@ -18,7 +18,7 @@ export default {
 <style scoped>
 nav {
   height: 10rem;
-  background-color: rgb(61, 61, 61);
+  background-color: rgb(61, 61, 60);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,14 +39,14 @@ nav button {
   cursor: pointer;
   border-radius: 50%;
   background-color: rgba(29, 25, 32, 0.5);
-  box-shadow: inset 0 0px 5px 1px rgb(29, 25, 32);
+  box-shadow: inset 0 0px 5px 1px rgb(29, 25, 31);
   border: 2px solid rgba(24, 0, 37, 0.192);
   outline: none;
 }
 
 nav button:hover,
 nav button:focus {
-  box-shadow: 0 0px 5px 1px rgb(29, 25, 32);
+  box-shadow: 0 0px 5px 1px rgb(29, 25, 30);
   animation: pulse 1s infinite alternate;
 }
 
@@ -61,7 +61,7 @@ nav button:focus {
 
 @keyframes pulse {
   100% {
-    box-shadow: 0 0px 5px 1px rgb(0, 255, 213);
+    box-shadow: 0 0px 5px 1px rgb(0, 255, 210);
   }
 }
 
